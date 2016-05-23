@@ -8,12 +8,12 @@ This API server was built in by Spotify to make the so-called "Spotify Play" but
 ps-spotify is able to send crafted GET requests to this API server to control your Spotify client.
 
 **Currently implemented functions:**
-- Get-SpotifyCsrfKey
-- Get-SpotifyOauthKey
-- Get-SpotifyStatus
-- Set-SpotifyMusic
-- Set-SpotifyPause
-- Set-SpotifyResume
+- `Get-SpotifyCsrfKey`
+- `Get-SpotifyOauthKey`
+- `Get-SpotifyStatus`
+- `Set-SpotifyMusic`
+- `Set-SpotifyPause`
+- `Set-SpotifyResume`
 
 **Command arguments:**
 - `Get-SpotifyCsrfKey [[-Port] <string>]`
@@ -24,22 +24,23 @@ ps-spotify is able to send crafted GET requests to this API server to control yo
 - `Set-SpotifyResume [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
 
 **Usage examples:
-- Get the client's status:__
-  Get-SpotifyStatus -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"
+- Get the client's status:  
+`Get-SpotifyStatus -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"`
   
-- Pause music:__
-  Set-SpotifyPause -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"
+- Pause music:  
+`Set-SpotifyPause -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"`
   
-- Resume music:__
-  Set-SpotifyResume -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"
+- Resume music:  
+`Set-SpotifyResume -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"`
   
-- Play a playlist/song/album:__
-  Set-SpotifyMusic -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Uri "spotify:album:6TJmQnO44YE5BtTxH8pop1" -Port "4371"
+- Play a playlist/song/album:  
+`Set-SpotifyMusic -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Uri "spotify:album:6TJmQnO44YE5BtTxH8pop1" -Port "4371"`
 
 **Notes:**
 Please note that the Port flag defaults to port 4371. If the script doesn't work, try setting the port flag to a value between 4370 and 4380.
 Happy Spotify-ing through PowerShell!
 
 **Changelog:**
-v0.1a (Current): Readme markdown fixes
+v0.1b (Current): Readme markdown fixes
+v0.1a: Readme markdown fixes
 v0.1: Initial release
