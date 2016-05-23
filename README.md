@@ -15,6 +15,7 @@ ps-spotify is able to send crafted GET requests to this API server to control yo
 - `Set-SpotifyMusic`
 - `Set-SpotifyPause`
 - `Set-SpotifyResume`
+- `Get-SpotifySearch`
 
 **Command arguments:**
 - `Get-SpotifyCsrfKey [[-Port] <string>]`
@@ -23,6 +24,7 @@ ps-spotify is able to send crafted GET requests to this API server to control yo
 - `Set-SpotifyMusic [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Uri] <string>] [[-Port] <string>]`
 - `Set-SpotifyPause [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
 - `Set-SpotifyResume [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
+- `Get-SpotifySearch [[-SearchQuery] <string>] [[-SearchType] <string>] [[-Limit] <int>] [[-Offset] <int>]`
 
 **Usage examples:**
 - Get the client's status:  
@@ -37,16 +39,24 @@ ps-spotify is able to send crafted GET requests to this API server to control yo
 - Play a playlist/song/album:  
 `Set-SpotifyMusic -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Uri "spotify:album:6TJmQnO44YE5BtTxH8pop1" -Port "4371"`
 
+- Search for a playlist:  
+`Get-SpotifySearch -SearchQuery "playlist 123" -SearchType "playlist"`
+
 **Notes:**  
-Please note that the Port flag defaults to port 4371. If the script doesn't work, try setting the port flag to a value between 4370 and 4380.
-Happy Spotify-ing through PowerShell!
+Please note that the Port flag defaults to port 4371. If the script doesn't work, try setting the port flag to a value between 4370 and 4380.  
+The SearchType flag used in `Get-SpotifySearch` only supports the following strings: 'album', 'artist', 'playlist' and 'track'.  
+The Limit flag in `Get-SpotifySearch` defaults to 50.  
+The Offset flag in `Get-SpotifySearch` defaults to 0.
 
 **Install guide:**  
 First of all, make sure you have Git installed on your computer (I recommend the Github client).  
-Start up a Git shell and change the working directory to C:
+Start up a Git shell, and run the following command
+git clone https://github.com/bmsimons/ps-spotify.git C:\Users\YOURUSERNAMEHERE\Documents\WindowsPowerShell\Modules\ps-spotify  
+
 
 **Changelog:**  
-v0.1e (Current): Added a `Get-SpotifySearch` function  
+v0.1f (Current): Updated the documentation, renamed module file  
+v0.1e: Added a `Get-SpotifySearch` function  
 v0.1d: Readme markdown fixes  
 v0.1c: Readme markdown fixes  
 v0.1b: Readme markdown fixes  
