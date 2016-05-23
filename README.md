@@ -16,24 +16,24 @@ ps-spotify is able to send crafted GET requests to this API server to control yo
 - Set-SpotifyResume
 
 **Command arguments:**
-- Get-SpotifyCsrfKey `[[-Port] <string>]`
-- Get-SpotifyOauthKey
-- Get-SpotifyStatus `[[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
-- Set-SpotifyMusic `[[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Uri] <string>] [[-Port] <string>]`
-- Set-SpotifyPause `[[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
-- Set-SpotifyResume `Set-SpotifyResume [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
+- `Get-SpotifyCsrfKey [[-Port] <string>]`
+- `Get-SpotifyOauthKey`
+- `Get-SpotifyStatus [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
+- `Set-SpotifyMusic [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Uri] <string>] [[-Port] <string>]`
+- `Set-SpotifyPause [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
+- `Set-SpotifyResume [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
 
 **Usage examples:
-- Get the client's status:
+- Get the client's status:__
   Get-SpotifyStatus -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"
   
-- Pause music:
+- Pause music:__
   Set-SpotifyPause -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"
   
-- Resume music:
+- Resume music:__
   Set-SpotifyResume -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"
   
-- Play a playlist/song/album:
+- Play a playlist/song/album:__
   Set-SpotifyMusic -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Uri "spotify:album:6TJmQnO44YE5BtTxH8pop1" -Port "4371"
 
 **Notes:**
@@ -41,4 +41,5 @@ Please note that the Port flag defaults to port 4371. If the script doesn't work
 Happy Spotify-ing through PowerShell!
 
 **Changelog:**
-v0.1 (Current): Initial release
+v0.1a (Current): Readme markdown fixes
+v0.1: Initial release
