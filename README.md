@@ -23,7 +23,7 @@ ps-spotify is able to send crafted GET requests to this API server to control yo
 - `Set-SpotifyPause [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
 - `Set-SpotifyResume [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
 
-**Usage examples:
+**Usage examples:**
 - Get the client's status:  
 `Get-SpotifyStatus -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"`
   
@@ -36,12 +36,13 @@ ps-spotify is able to send crafted GET requests to this API server to control yo
 - Play a playlist/song/album:  
 `Set-SpotifyMusic -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Uri "spotify:album:6TJmQnO44YE5BtTxH8pop1" -Port "4371"`
 
-**Notes:**
+**Notes:**  
 Please note that the Port flag defaults to port 4371. If the script doesn't work, try setting the port flag to a value between 4370 and 4380.
 Happy Spotify-ing through PowerShell!
 
-**Changelog:**
-v0.1c (Current): Readme markdown fixes  
+**Changelog:**  
+v0.1d (Current): Readme markdown fixes  
+v0.1c: Readme markdown fixes  
 v0.1b: Readme markdown fixes  
 v0.1a: Readme markdown fixes  
 v0.1: Initial release
