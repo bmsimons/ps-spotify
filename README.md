@@ -3,6 +3,7 @@ ps-spotify
 A PowerShell module that talks to your Spotify client!
 
 **How does this work?**  
+  
 The Spotify client for Windows, Mac and Linux has a built-in local API server that runs when you are running the client.
 This API server was built in by Spotify to make the so-called "Spotify Play" buttons talk to your Spotify client running on your computer.
 ps-spotify is able to send crafted GET requests to this API server to control your Spotify client.
@@ -40,8 +41,13 @@ ps-spotify is able to send crafted GET requests to this API server to control yo
 Please note that the Port flag defaults to port 4371. If the script doesn't work, try setting the port flag to a value between 4370 and 4380.
 Happy Spotify-ing through PowerShell!
 
+**Install guide:**  
+First of all, make sure you have Git installed on your computer (I recommend the Github client).  
+Start up a Git shell and change the working directory to C:
+
 **Changelog:**  
-v0.1d (Current): Readme markdown fixes  
+v0.1e (Current): Added a `Get-SpotifySearch` function  
+v0.1d: Readme markdown fixes  
 v0.1c: Readme markdown fixes  
 v0.1b: Readme markdown fixes  
 v0.1a: Readme markdown fixes  
