@@ -50,12 +50,13 @@ The Offset flag in `Get-SpotifySearch` defaults to 0.
 
 **Install guide:**  
 First of all, make sure you have Git installed on your computer (I recommend the Github client).  
-Start up a Git shell, and run the following command
-git clone https://github.com/bmsimons/ps-spotify.git C:\Users\YOURUSERNAMEHERE\Documents\WindowsPowerShell\Modules\ps-spotify  
+Start up a Git shell, and run the following command  
+`git clone https://github.com/bmsimons/ps-spotify.git C:\Users\YOURUSERNAMEHERE\Documents\WindowsPowerShell\Modules\ps-spotify`  
 
 
 **Changelog:**  
-v0.1f (Current): Updated the documentation, renamed module file  
+v0.1g (Current): Updated markdown  
+v0.1f: Updated the documentation, renamed module file  
 v0.1e: Added a `Get-SpotifySearch` function  
 v0.1d: Readme markdown fixes  
 v0.1c: Readme markdown fixes  
