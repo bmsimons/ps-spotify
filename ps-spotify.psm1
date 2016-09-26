@@ -100,7 +100,7 @@ Function Set-SpotifyMusic {
         Out-Null
 }
 
-Function Get-SpotifySearch {
+Function Find-SpotifyItem {
         
     Param (
         [Parameter(
@@ -128,7 +128,7 @@ Function Get-SpotifySearch {
         $Offset = 0
     )
 
-    $results = nvoke-RestMethod -Method GET "https://api.spotify.com/v1/search?q=$SearchQuery&type=$SearchType&limit=$Limit&offset=$Offset"
+    $results = Invoke-RestMethod -Method GET "https://api.spotify.com/v1/search?q=$SearchQuery&type=$SearchType&limit=$Limit&offset=$Offset"
 
     if ($PSBoundParameters.ContainsKey("SeachType")) {
         $results = $results.$SearchType
