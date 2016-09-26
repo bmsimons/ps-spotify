@@ -65,7 +65,7 @@ Function Get-SpotifyStatus {
         [Parameter()]
         [String]$CsrfKey = (Get-SpotifyCsrfKey), 
         
-        [Paremter()]
+        [Parameter()]
         [String]
         $Port = "4371"
         
