@@ -40,7 +40,6 @@ Function Find-SpotifyItem {
     }
     try {
         $result = Invoke-RestMethod @params
-
         Write-Output -InputObject $result."${SearchType}s".items
     } catch {
         $_
