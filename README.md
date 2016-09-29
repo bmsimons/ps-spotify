@@ -9,38 +9,17 @@ This API server was built in by Spotify to make the so-called "Spotify Play" but
 ps-spotify is able to send crafted GET requests to this API server to control your Spotify client.
 
 **Currently implemented functions:**
-- `Get-SpotifyCsrfKey`
-- `Get-SpotifyOauthKey`
-- `Get-SpotifyStatus`
-- `Set-SpotifyMusic`
-- `Set-SpotifyPause`
-- `Set-SpotifyResume`
-- `Get-SpotifySearch`
+- `Find-SpotifyItem`
+- `Get-SpotifyTrackStatus`
+- `Set-SpotifyTrack`
 
 **Command arguments:**
-- `Get-SpotifyCsrfKey [[-Port] <string>]`
-- `Get-SpotifyOauthKey`
-- `Get-SpotifyStatus [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
-- `Set-SpotifyMusic [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Uri] <string>] [[-Port] <string>]`
-- `Set-SpotifyPause [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
-- `Set-SpotifyResume [[-OauthKey] <string>] [[-CsrfKey] <string>] [[-Port] <string>]`
-- `Get-SpotifySearch [[-SearchQuery] <string>] [[-SearchType] <string>] [[-Limit] <int>] [[-Offset] <int>]`
-
-**Usage examples:**
-- Get the client's status:  
-`Get-SpotifyStatus -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"`
-  
-- Pause music:  
-`Set-SpotifyPause -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"`
-  
-- Resume music:  
-`Set-SpotifyResume -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Port "4371"`
-  
-- Play a playlist/song/album:  
-`Set-SpotifyMusic -OauthKey (Get-SpotifyOauthKey) -CsrfKey (Get-SpotifyCsrfKey -Port "4371") -Uri "spotify:album:6TJmQnO44YE5BtTxH8pop1" -Port "4371"`
-
-- Search for a playlist:  
-`Get-SpotifySearch -SearchQuery "playlist 123" -SearchType "playlist"`
+- `Find-SpotifyItem [-SearchQuery] <string> [-SearchType] {Artist | Track | Playlist | Album} [[-Limit] <int>] [[-Offset] <int>]  [<CommonParameters>]`
+- `Get-SpotifyTrackStatus [[-Port] <string>]  [<CommonParameters>]`
+- `Set-SpotifyTrack [-Port <string>]  [<CommonParameters>]`
+- `Set-SpotifyTrack -SpotifyUri <string> [-Port <string>]  [<CommonParameters>]`
+- `Set-SpotifyTrack [-Pause] [-Port <string>]  [<CommonParameters>]`
+- `Set-SpotifyTrack [-Resume] [-Port <string>]  [<CommonParameters>]`
 
 **Notes:**  
 Please note that the Port flag defaults to port 4371. If the script doesn't work, try setting the port flag to a value between 4370 and 4380.  
@@ -57,8 +36,9 @@ You can now close your git client window. You can now import this module like th
 and now you can make use of all documented commands. Happy Spotifying!  
 
 
-**Changelog:**  
-v0.2 (Current): Second release
+**Changelog:**
+v0.3 (Current): Major overhaul, added cmdlet parameter binding and merged play functions into single cmdlet. 
+v0.2 Second release
 v0.1g: Updated markdown  
 v0.1f: Updated the documentation, renamed module file  
 v0.1e: Added a `Get-SpotifySearch` function   
