@@ -9,7 +9,10 @@ Function Get-SpotifyCsrfKey {
         [Parameter(
             Mandatory = $true
         )]
-        [String]
+        [ValidateRange(
+            4370, 4380
+        )]
+        [Int]
         $Port
     )
 

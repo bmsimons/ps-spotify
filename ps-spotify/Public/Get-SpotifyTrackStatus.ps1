@@ -7,8 +7,11 @@ Function Get-SpotifyTrackStatus {
     
     Param (
         [Parameter()]
-        [String]
-        $Port = "4371"
+        [ValidateRange(
+            4370, 4380
+        )]
+        [Int]
+        $Port = 4371
         
     )
 
