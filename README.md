@@ -37,10 +37,10 @@ and now you can make use of all documented commands. Happy Spotifying!
 
 
 **Changelog:**
-v0.3 (Current): Major overhaul, added cmdlet parameter binding and merged play functions into single cmdlet. 
-v0.2 Second release
-v0.1g: Updated markdown  
-v0.1f: Updated the documentation, renamed module file  
-v0.1e: Added a `Get-SpotifySearch` function   
-v0.1a: Readme markdown fixes  
-v0.1: Initial release
+- v0.3 (Current): Major overhaul, added cmdlet parameter binding and merged play functions into single cmdlet. 
+- v0.2 Second release
+- v0.1g: Updated markdown  
+- v0.1f: Updated the documentation, renamed module file  
+- v0.1e: Added a `Get-SpotifySearch` function
+- v0.1a: Readme markdown fixes  
+- v0.1: Initial release
