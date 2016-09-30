@@ -10,7 +10,8 @@ Function Set-SpotifyTrack {
     Param (
         [Parameter(
             Mandatory = $true,
-            ParameterSetName = "Play"
+            ParameterSetName = "Play",
+            ValueFromPipelineByPropertyName = $true
         )]
         [String]
         $SpotifyUri, 
