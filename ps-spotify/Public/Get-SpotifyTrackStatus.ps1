@@ -11,7 +11,7 @@ Function Get-SpotifyTrackStatus {
             4370, 4380
         )]
         [Int]
-        $Port = 4371
+        $Port = (Get-SpotifyWebHelperPort)
         
     )
 

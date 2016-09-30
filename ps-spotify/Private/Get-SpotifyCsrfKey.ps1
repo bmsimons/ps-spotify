@@ -7,13 +7,13 @@ Function Get-SpotifyCsrfKey {
 
     Param (
         [Parameter(
-            Mandatory = $true
+            Mandatory = $false
         )]
         [ValidateRange(
             4370, 4380
         )]
         [Int]
-        $Port
+        $Port = (Get-SpotifyWebHelperPort)
     )
 
     $params = @{
