@@ -1,3 +1,31 @@
+<#
+.SYNOPSIS
+    Set the current Spotify track.
+.DESCRIPTION
+    Sets the state of the current Spotify track.
+.INPUTS
+    System.String.
+.OUTPUTS
+    None.
+.PARAMETER SpotifyUri
+    The Spotify URI to play.
+.PARAMETER Pause
+    Switch used to pause the current track.
+.PARAMETER Resume
+    Switch used to resume playback of the current track.
+.PARAMETER Port
+    The Port number to use when invoking the REST method against https://www.spotilocal.com
+.EXAMPLE
+    PS C:\> Set-SpotifyTrack -SpotifyUri "spotify:track:2gTXHAdDkCTGT9paqmgzEB"
+.EXAMPLE
+    PS C:\> Set-SpotifyTrack -Pause
+.NOTES
+.LINK
+    https://bartsimons.me
+.LINK
+    https://dotps1.github.io
+#>
+
 Function Set-SpotifyTrack {
     
     [CmdletBinding(
