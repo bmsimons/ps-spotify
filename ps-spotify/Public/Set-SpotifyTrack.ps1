@@ -33,7 +33,7 @@ Function Set-SpotifyTrack {
             4370, 4380
         )]
         [Int]
-        $Port = 4371
+        $Port = (Get-SpotifyWebHelperPort)
     )
 
     switch ($PSCmdlet.ParameterSetName) {
