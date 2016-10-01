@@ -1,4 +1,25 @@
-﻿Function Get-SpotifyWebHelperPort {
+﻿<#
+.SYNOPSIS
+    Gets the port used by the Spotify process.
+.DESCRIPTION
+    Gets the port used by the Spotify process running on the localhost.
+.INPUTS
+    None.
+.OUTPUTS
+    System.Int.
+.EXAMPLE
+    PS C:\> Get-SpotifyWebHelperPort
+    4371
+.NOTES
+    This function is used in ps-spotify to find and set the default port, however it can be overridden.
+.LINK
+    https://bartsimons.me
+.LINK
+    https://dotps1.github.io
+#>
+
+Function Get-SpotifyWebHelperPort {
+
     [CmdletBinding()]
     [OutputType(
         [Int]
@@ -8,9 +29,5 @@
 
     )
 
-    ForEach ($Connection in Get-NetTCPConnection -State Listen | Select LocalPort, OwningProcess | where { $_.LocalPort -ge 4370 -and $_.LocalPort -le 4380 }) {
-        If ((Get-Process | where { $_.ProcessName -eq "Spotify" }).Id -contains $Connection.OwningProcess) {
-            return $Connection.LocalPort
-        }
-    }
+    Write-Output -InputObject (Get-NetTCPConnection -OwningProcess (Get-Process -Name "Spotify").Id -LocalPort (4370..4380)).LocalPort
 }
