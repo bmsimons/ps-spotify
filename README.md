@@ -4,42 +4,50 @@ A PowerShell module that talks to your Spotify client!
 
 **How does this work?**  
   
-The Spotify client for Windows, Mac and Linux has a built-in local API server that runs when you are running the client.
-This API server was built in by Spotify to make the so-called "Spotify Play" buttons talk to your Spotify client running on your computer.
-ps-spotify is able to send crafted GET requests to this API server to control your Spotify client.
+This PowerShell module acts as a wrapper around the ![Spotify Web API](https://developer.spotify.com/web-api/endpoint-reference/). You will be able to e.g. search for songs, albums and playlists, you can even fiddle around with Spotify Connect if you want to. Just like any other Spotify API implementation, you'll need to provide a basic bearer (access token) and a refresh token. Please take a look at my other project - ![dotnet-core-spotify-authentication](https://github.com/bmsimons/dotnet-core-spotify-authentication) - this is an open-source utility you can use to get your access token and refresh token. You fill in the two needed tokens in ps-spotify.psm1 and you are good to go!
 
 **Currently implemented functions:**
-- `Find-SpotifyItem`
-- `Get-SpotifyTrackStatus`
-- `Set-SpotifyTrack`
-
-**Command arguments:**
-- `Find-SpotifyItem [-SearchQuery] <string> [-SearchType] {Artist | Track | Playlist | Album} [[-Limit] <int>] [[-Offset] <int>]  [<CommonParameters>]`
-- `Get-SpotifyTrackStatus [[-Port] <string>]  [<CommonParameters>]`
-- `Set-SpotifyTrack [-Port <string>]  [<CommonParameters>]`
-- `Set-SpotifyTrack -SpotifyUri <string> [-Port <string>]  [<CommonParameters>]`
-- `Set-SpotifyTrack [-Pause] [-Port <string>]  [<CommonParameters>]`
-- `Set-SpotifyTrack [-Resume] [-Port <string>]  [<CommonParameters>]`
-
-**Notes:**  
-Please note that the Port flag defaults to port 4371. If the script doesn't work, try setting the port flag to a value between 4370 and 4380.  
-The SearchType flag used in `Get-SpotifySearch` only supports the following strings: 'album', 'artist', 'playlist' and 'track'.  
-The Limit flag in `Get-SpotifySearch` defaults to 50.  
-The Offset flag in `Get-SpotifySearch` defaults to 0.
+- `Get-SpotifyAlbum`
+- `Get-SpotifyAlbums`
+- `Get-SpotifyCategory`
+- `Get-SpotifyCategories`
+- `Get-SpotifyCategoryPlaylists`
+- `Get-SpotifyConnectDevice`
+- `Get-SpotifyConnectDevices`
+- `Get-SpotifyCurrentlyPlaying`
+- `Get-SpotifyFeaturedPlaylists`
+- `Get-SpotifyNewReleases`
+- `Get-SpotifyTrack`
+- `Get-SpotifyTracks`
+- `Get-SpotifyUser`
+- `Invoke-SpotifyConnectPrevious`
+- `Invoke-SpotifyConnectSkip`
+- `Set-SpotifyConnectPause`
+- `Set-SpotifyConnectPlay`
+- `Set-SpotifyConnectPlayer`
+- `Set-SpotifyConnectRepeat`
+- `Set-SpotifyConnectSeek`
+- `Set-SpotifyConnectShuffle`
+- `Set-SpotifyConnectVolume`
 
 **Install guide:**  
 First of all, make sure you have Git installed on your computer (I recommend the Github client).  
 Start up a Git shell, and run the following command  
-`git clone https://github.com/bmsimons/ps-spotify.git C:\Users\YOURUSERNAMEHERE\Documents\WindowsPowerShell\Modules\ps-spotify`  
+`git clone https://github.com/bmsimons/ps-spotify.git`
 You can now close your git client window. You can now import this module like this:  
-`Import-Module ps-spotify`  
+`Import-Module ./ps-spotify/ps-spotify`  
 and now you can make use of all documented commands. Happy Spotifying!  
 
+**Compatibility**
+This module has been tested and proven to be working on Microsoft Windows, Apple macOS, and Linux.
+If something doesn't work, try to upgrade to a newer PowerShell release.
+In case if you are using Microsoft Windows, try to use the ![open-source PowerShell version](https://github.com/powershell/powershell).
 
 **Changelog:**
-- v0.3a (Current): Added automatic Spotify web helper port fetching.  
+- v1.0 (Current): Code base has been completely rebuilt.  
+- v0.3a: Added automatic Spotify web helper port fetching.  
 - v0.3: Major overhaul, added cmdlet parameter binding and merged play functions into single cmdlet. 
-- v0.2 Second release
+- v0.2 Second release  
 - v0.1g: Updated markdown  
 - v0.1f: Updated the documentation, renamed module file  
 - v0.1e: Added a `Get-SpotifySearch` function
