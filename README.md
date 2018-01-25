@@ -8,7 +8,7 @@ This PowerShell module acts as a wrapper around the ![Spotify Web API](https://d
 
 If things are unclear, please check out these two articles on my website:
 
-https://bartsimons.me/net-core-and-the-spotify-api-getting-authenticated/
+https://bartsimons.me/net-core-and-the-spotify-api-getting-authenticated/ 
 https://bartsimons.me/ps-spotify-a-powershell-module-to-control-the-spotify-web-api/
 
 **Currently implemented functions:**
