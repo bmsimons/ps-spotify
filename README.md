@@ -4,9 +4,15 @@ A PowerShell module that talks to your Spotify client!
 
 **How does this work?**  
   
-This PowerShell module acts as a wrapper around the ![Spotify Web API](https://developer.spotify.com/web-api/endpoint-reference/). You will be able to e.g. search for songs, albums and playlists, you can even fiddle around with Spotify Connect if you want to. Just like any other Spotify API implementation, you'll need to provide a basic bearer (access token) and a refresh token. Please take a look at my other project - ![dotnet-core-spotify-authentication](https://github.com/bmsimons/dotnet-core-spotify-authentication) - this is an open-source utility you can use to get your access token and refresh token. You fill in the two needed tokens in ps-spotify.psm1 and you are good to go!
+This PowerShell module acts as a wrapper around the ![Spotify Web API](https://developer.spotify.com/web-api/endpoint-reference/). You will be able to e.g. search for songs, albums and playlists, you can even fiddle around with Spotify Connect if you want to. Just like any other Spotify API implementation, you'll need to provide a basic bearer (base64 encoded string of client_id_goes_here:client_secret_goes_here) and a refresh token. Please take a look at my other project - ![dotnet-core-spotify-authentication](https://github.com/bmsimons/dotnet-core-spotify-authentication) - this is an open-source utility you can use to get your needed refresh token. You fill in the two needed tokens in ps-spotify.psm1 and you are good to go!
+
+If things are unclear, please check out these two articles on my website:
+
+https://bartsimons.me/net-core-and-the-spotify-api-getting-authenticated/
+https://bartsimons.me/ps-spotify-a-powershell-module-to-control-the-spotify-web-api/
 
 **Currently implemented functions:**
+- `Find-SpotifyItem`
 - `Get-SpotifyAlbum`
 - `Get-SpotifyAlbums`
 - `Get-SpotifyCategory`

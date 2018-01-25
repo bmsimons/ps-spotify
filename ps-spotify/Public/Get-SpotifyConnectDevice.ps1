@@ -1,4 +1,4 @@
-Function Get-SpotifyConnectDevices {
+Function Get-SpotifyConnectDevice {
     <#
         .SYNOPSIS
             Returns the currently active Spotify Connect device.
